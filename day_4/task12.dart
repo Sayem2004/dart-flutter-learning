@@ -1,17 +1,17 @@
 import 'dart:io';
 
 void add(double number1, double number2) {
- print("Result: $number1+$number2");
+ print("Result: ${number1 +number2} ");
 }
 void subtract(double number1, double number2) {
-  print("Result: $number1 - $number2");
+  print("Result: ${number1 - number2}");
 }
 void multiply(double number1, double number2) {
-  print("Result: $number1 * $number2") ;
+  print("Result: ${number1 * number2}") ;
 }
 
 void divide(double number1, double number2) {
-  print("Result: $number1/$number2");
+  print("Result: ${number1/number2}");
 }
 
 void main(){
