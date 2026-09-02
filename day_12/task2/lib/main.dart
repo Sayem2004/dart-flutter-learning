@@ -12,15 +12,52 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        body: Padding(
-          padding:  EdgeInsets.symmetric(horizontal: 10.0, vertical: 15),
-          child: Center(
-              child: CounterScreen()),
+        body: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 30, vertical: 50),
+              child: Center(
+                child: CounterScreen(),
+              ),
+            ),
+
+            AboutInfo(
+              icon: Icons.holiday_village,
+              name: "Zabber",
+              Address: "Barguna",
+            ),
+          ],
         ),
       ),
     );
   }
 }
+
+class AboutInfo extends StatelessWidget{
+  final IconData icon;
+  final String name;
+  final String Address;
+
+  const AboutInfo({super.key,
+  required this.icon, required this.name, required this.Address,});
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      margin: const EdgeInsets.only(left:15),
+
+      child: Column(
+        children: [
+          Icon(icon),
+          Text("Name: $name"),
+          Text("Address: $Address"),
+        ],
+      ),
+    );
+  }
+}
+
 
 class CounterScreen extends StatefulWidget{
   const CounterScreen({super.key});
