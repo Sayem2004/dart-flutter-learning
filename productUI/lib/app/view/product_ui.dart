@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'product_details.dart';
+import 'cart_ui.dart';
 
 class ProductUI extends StatelessWidget {
   const ProductUI({super.key});
@@ -608,23 +609,34 @@ class ProductUI extends StatelessWidget {
       bottomNavigationBar: SafeArea(
         top: false,
         child: BottomNavigationBar(
-          backgroundColor: Color.fromRGBO(225, 250, 255, 1),
+          backgroundColor: const Color.fromRGBO(225, 250, 255, 1),
           type: BottomNavigationBarType.fixed,
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
+
+          onTap: (index) {
+            if (index == 1) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const CartUI(),
+                ),
+              );
+            }
+          },
+
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
               label: 'Home',
             ),
-
             BottomNavigationBarItem(
               icon: Icon(Icons.shopping_cart),
               label: 'Cart',
             ),
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: "Setting",
+              label: 'Setting',
             ),
           ],
         ),
