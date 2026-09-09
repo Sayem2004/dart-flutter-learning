@@ -12,17 +12,27 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       home: Scaffold(
+<<<<<<< product-ui
         appBar: AppBar(title: const Text("Hello Fahad")),
         body: Column(
           children: [
             Text(
               "Hello Farhan Gunda",
+=======
+        appBar: AppBar(
+          title: const Text("Hello Fahad"),
+        ),
+        body: Column(
+          children: [
+            Text("Hello Farhan Gunda",
+>>>>>>> main
               style: TextStyle(
                 fontSize: 25,
                 color: Colors.red,
                 fontWeight: FontWeight.bold,
               ),
             ),
+<<<<<<< product-ui
             Container(child: Text("Hello Hi")),
             SizedBox(height: 15),
 
@@ -94,3 +104,18 @@ class _CounterScreenState extends State<CounterScreen> {
   }
 }
 
+=======
+            Container(
+                child:
+                  Text("Hello Hi"),
+
+            ),
+
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+>>>>>>> main
