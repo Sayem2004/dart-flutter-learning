@@ -1,5 +1,5 @@
-import 'package:flutter/material.dart';
-import 'checkout_ui.dart';
+import "package:flutter/material.dart";
+import "checkout_ui.dart";
 
 class CartUI extends StatelessWidget {
   const CartUI({super.key});
@@ -8,18 +8,25 @@ class CartUI extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: const Color.fromRGBO(249, 241, 255, 1),
+
       appBar: AppBar(
         backgroundColor: const Color.fromRGBO(235, 240, 255, 1),
+
         leading: IconButton(
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           icon: const Icon(Icons.arrow_back),
         ),
-        title: const Text("My Cart",
+
+        title: const Text(
+          "My Cart",
           style: TextStyle(
             fontSize: 16,
             fontWeight: FontWeight.w600,
           ),
         ),
+
         centerTitle: true,
       ),
 
@@ -30,7 +37,9 @@ class CartUI extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                const SizedBox(height: 5,),
+                const SizedBox(height: 12),
+
+                // Product 1
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
@@ -41,52 +50,64 @@ class CartUI extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        width: 110,
-                        height: 110,
+                        width: 105,
+                        height: 105,
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(255, 240, 190, 1),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Image.asset('assets/images/download.jpg',
+                        child: Image.asset(
+                          "assets/images/download.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
+
                       const SizedBox(width: 12),
 
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text("Hoodi",
+                            const Text(
+                              "Hoodi",
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
 
-                            const SizedBox(height: 6),
-                            const Text("Price: 609.00 tk",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Color.fromRGBO(255, 166, 0, 1),),
-                            ),
-                            const SizedBox(height: 6),
+                            const SizedBox(height: 5),
 
-                            const Text("Color: Black",
+                            const Text(
+                              "Price: 609.00 tk",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Color.fromRGBO(255, 166, 0, 1),
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Color: Black",
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
                               ),
                             ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Size: XL",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+
                             const SizedBox(height: 6),
-                            const Text("Size: XL",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -95,11 +116,19 @@ class CartUI extends StatelessWidget {
                                   children: [
                                     IconButton(
                                       onPressed: () {},
-                                      icon: const Icon(Icons.remove),
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.remove,
+                                        size: 18,
+                                      ),
                                     ),
 
                                     const Text(
-                                      '1',
+                                      "1",
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w600,
@@ -108,125 +137,43 @@ class CartUI extends StatelessWidget {
 
                                     IconButton(
                                       onPressed: () {},
-                                      icon: const Icon(Icons.add),
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.add,
+                                        size: 18,
+                                      ),
                                     ),
                                   ],
                                 ),
+
                                 IconButton(
                                   onPressed: () {},
-                                  icon: const Icon(Icons.delete_outline),
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(
+                                    minWidth: 30,
+                                    minHeight: 30,
+                                  ),
+                                  icon: const Icon(
+                                    Icons.delete_outline,
+                                    size: 20,
+                                  ),
                                 ),
                               ],
                             ),
                           ],
                         ),
-
                       ),
-
                     ],
                   ),
                 ),
 
-                const SizedBox(height: 5,),
-                // Container(
-                //   width: double.infinity,
-                //   padding: const EdgeInsets.all(12),
-                //   decoration: BoxDecoration(
-                //     color: Colors.white,
-                //     borderRadius: BorderRadius.circular(16),
-                //   ),
-                //   child: Row(
-                //     children: [
-                //       Container(
-                //         width: 110,
-                //         height: 110,
-                //         clipBehavior: Clip.antiAlias,
-                //         decoration: BoxDecoration(
-                //           color: const Color.fromRGBO(255, 240, 190, 1),
-                //           borderRadius: BorderRadius.circular(12),
-                //         ),
-                //         child: Image.asset('assets/images/body spray.jpg',
-                //           fit: BoxFit.cover,
-                //         ),
-                //       ),
-                //       const SizedBox(width: 12),
-                //
-                //       Expanded(
-                //         child: Column(
-                //           crossAxisAlignment: CrossAxisAlignment.start,
-                //           children: [
-                //             const Text("Body Spary",
-                //               style: TextStyle(
-                //                 fontSize: 14,
-                //                 fontWeight: FontWeight.w600,
-                //               ),
-                //             ),
-                //
-                //             const SizedBox(height: 6),
-                //             const Text("Price: 900.00 tk",
-                //               style: TextStyle(
-                //                 fontSize: 12,
-                //                 color: Color.fromRGBO(255, 166, 0, 1),),
-                //             ),
-                //             const SizedBox(height: 6),
-                //
-                //             const Text("Company: Herlan",
-                //               style: TextStyle(
-                //                 fontSize: 12,
-                //                 color: Colors.grey,
-                //               ),
-                //             ),
-                //             const SizedBox(height: 6),
-                //             const Text("Time: 6-8 h",
-                //               style: TextStyle(
-                //                 fontSize: 12,
-                //                 color: Colors.grey,
-                //               ),
-                //             ),
-                //             const SizedBox(height: 10),
-                //
-                //             Row(
-                //               mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                //               children: [
-                //                 Row(
-                //                   children: [
-                //                     IconButton(
-                //                       onPressed: () {},
-                //                       icon: const Icon(Icons.remove),
-                //                     ),
-                //
-                //                     const Text(
-                //                       '1',
-                //                       style: TextStyle(
-                //                         fontSize: 12,
-                //                         fontWeight: FontWeight.w600,
-                //                       ),
-                //                     ),
-                //
-                //                     IconButton(
-                //                       onPressed: () {},
-                //                       icon: const Icon(Icons.add),
-                //                     ),
-                //                   ],
-                //                 ),
-                //                 IconButton(
-                //                   onPressed: () {},
-                //                   icon: const Icon(Icons.delete_outline),
-                //                 ),
-                //               ],
-                //             ),
-                //           ],
-                //         ),
-                //
-                //       ),
-                //
-                //     ],
-                //   ),
-                // ),
+                const SizedBox(height: 10),
 
-
-
-                const SizedBox(height: 5,),
+                // Product 2
                 Container(
                   width: double.infinity,
                   padding: const EdgeInsets.all(12),
@@ -237,52 +184,64 @@ class CartUI extends StatelessWidget {
                   child: Row(
                     children: [
                       Container(
-                        width: 110,
-                        height: 110,
+                        width: 105,
+                        height: 105,
                         clipBehavior: Clip.antiAlias,
                         decoration: BoxDecoration(
                           color: const Color.fromRGBO(255, 240, 190, 1),
                           borderRadius: BorderRadius.circular(12),
                         ),
-                        child: Image.asset('assets/images/T-shirt.jpg',
+                        child: Image.asset(
+                          "assets/images/body spray.jpg",
                           fit: BoxFit.cover,
                         ),
                       ),
+
                       const SizedBox(width: 12),
 
                       Expanded(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            const Text("T-shirt",
+                            const Text(
+                              "Body Spray",
                               style: TextStyle(
                                 fontSize: 14,
                                 fontWeight: FontWeight.w600,
                               ),
                             ),
 
-                            const SizedBox(height: 6),
-                            const Text("Price: 409.00 tk",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Color.fromRGBO(255, 166, 0, 1),),
-                            ),
-                            const SizedBox(height: 6),
+                            const SizedBox(height: 5),
 
-                            const Text("Color: Black",
+                            const Text(
+                              "Price: 900.00 tk",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Color.fromRGBO(255, 166, 0, 1),
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Company: Herlan",
                               style: TextStyle(
                                 fontSize: 12,
                                 color: Colors.grey,
                               ),
                             ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Time: 6-8 h",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+
                             const SizedBox(height: 6),
-                            const Text("Size: XL",
-                              style: TextStyle(
-                                fontSize: 12,
-                                color: Colors.grey,
-                              ),
-                            ),
-                            const SizedBox(height: 10),
 
                             Row(
                               mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -291,11 +250,19 @@ class CartUI extends StatelessWidget {
                                   children: [
                                     IconButton(
                                       onPressed: () {},
-                                      icon: const Icon(Icons.remove),
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.remove,
+                                        size: 18,
+                                      ),
                                     ),
 
                                     const Text(
-                                      '1',
+                                      "1",
                                       style: TextStyle(
                                         fontSize: 12,
                                         fontWeight: FontWeight.w600,
@@ -304,32 +271,185 @@ class CartUI extends StatelessWidget {
 
                                     IconButton(
                                       onPressed: () {},
-                                      icon: const Icon(Icons.add),
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.add,
+                                        size: 18,
+                                      ),
                                     ),
                                   ],
                                 ),
+
                                 IconButton(
                                   onPressed: () {},
-                                  icon: const Icon(Icons.delete_outline),
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(
+                                    minWidth: 30,
+                                    minHeight: 30,
+                                  ),
+                                  icon: const Icon(
+                                    Icons.delete_outline,
+                                    size: 20,
+                                  ),
                                 ),
                               ],
                             ),
                           ],
                         ),
-
                       ),
-
                     ],
                   ),
                 ),
+
+                const SizedBox(height: 10),
+
+                // Product 3
+                Container(
+                  width: double.infinity,
+                  padding: const EdgeInsets.all(12),
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                    borderRadius: BorderRadius.circular(16),
+                  ),
+                  child: Row(
+                    children: [
+                      Container(
+                        width: 105,
+                        height: 105,
+                        clipBehavior: Clip.antiAlias,
+                        decoration: BoxDecoration(
+                          color: const Color.fromRGBO(255, 240, 190, 1),
+                          borderRadius: BorderRadius.circular(12),
+                        ),
+                        child: Image.asset(
+                          "assets/images/T-shirt.jpg",
+                          fit: BoxFit.cover,
+                        ),
+                      ),
+
+                      const SizedBox(width: 12),
+
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            const Text(
+                              "T-shirt",
+                              style: TextStyle(
+                                fontSize: 14,
+                                fontWeight: FontWeight.w600,
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Price: 409.00 tk",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Color.fromRGBO(255, 166, 0, 1),
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Color: Black",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+
+                            const SizedBox(height: 5),
+
+                            const Text(
+                              "Size: XL",
+                              style: TextStyle(
+                                fontSize: 12,
+                                color: Colors.grey,
+                              ),
+                            ),
+
+                            const SizedBox(height: 6),
+
+                            Row(
+                              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                              children: [
+                                Row(
+                                  children: [
+                                    IconButton(
+                                      onPressed: () {},
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.remove,
+                                        size: 18,
+                                      ),
+                                    ),
+
+                                    const Text(
+                                      "1",
+                                      style: TextStyle(
+                                        fontSize: 12,
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                    ),
+
+                                    IconButton(
+                                      onPressed: () {},
+                                      padding: EdgeInsets.zero,
+                                      constraints: const BoxConstraints(
+                                        minWidth: 30,
+                                        minHeight: 30,
+                                      ),
+                                      icon: const Icon(
+                                        Icons.add,
+                                        size: 18,
+                                      ),
+                                    ),
+                                  ],
+                                ),
+
+                                IconButton(
+                                  onPressed: () {},
+                                  padding: EdgeInsets.zero,
+                                  constraints: const BoxConstraints(
+                                    minWidth: 30,
+                                    minHeight: 30,
+                                  ),
+                                  icon: const Icon(
+                                    Icons.delete_outline,
+                                    size: 20,
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  ),
+                ),
+
                 const SizedBox(height: 20),
 
+                // Promo Code
                 Row(
                   children: [
                     Expanded(
                       child: Container(
                         height: 45,
-                        padding: const EdgeInsets.symmetric(horizontal: 14),
+                        padding: const EdgeInsets.symmetric(
+                          horizontal: 14,
+                        ),
                         decoration: BoxDecoration(
                           color: Colors.white,
                           borderRadius: BorderRadius.circular(12),
@@ -346,11 +466,13 @@ class CartUI extends StatelessWidget {
                     ),
 
                     const SizedBox(width: 8),
+
                     SizedBox(
                       height: 45,
                       child: ElevatedButton(
                         onPressed: () {},
-                        child: const Text("Apply",
+                        child: const Text(
+                          "Apply",
                           style: TextStyle(
                             fontSize: 12,
                           ),
@@ -361,30 +483,39 @@ class CartUI extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 20),
-                const Text("Order Summary",
+
+                // Order Summary
+                const Text(
+                  "Order Summary",
                   style: TextStyle(
                     fontSize: 16,
                     fontWeight: FontWeight.w600,
                   ),
                 ),
+
                 const SizedBox(height: 12),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Subtotal",
+                    const Text(
+                      "Subtotal",
                       style: TextStyle(fontSize: 12),
                     ),
-                    const Text("10000.00 tk",
+                    const Text(
+                      "10000.00 tk",
                       style: TextStyle(fontSize: 12),
                     ),
                   ],
                 ),
 
                 const SizedBox(height: 8),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Delivery Fee",
+                    const Text(
+                      "Delivery Fee",
                       style: TextStyle(fontSize: 12),
                     ),
                     const Text(
@@ -395,16 +526,20 @@ class CartUI extends StatelessWidget {
                 ),
 
                 const Divider(height: 24),
+
                 Row(
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
-                    const Text("Total Amount",
+                    const Text(
+                      "Total Amount",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
                       ),
                     ),
-                    const Text("10120.00 tk",
+
+                    const Text(
+                      "10120.00 tk",
                       style: TextStyle(
                         fontSize: 14,
                         fontWeight: FontWeight.w600,
@@ -412,7 +547,9 @@ class CartUI extends StatelessWidget {
                     ),
                   ],
                 ),
-                const SizedBox(height: 20),
+
+                const SizedBox(height: 16),
+
                 SizedBox(
                   width: double.infinity,
                   height: 45,
@@ -425,15 +562,22 @@ class CartUI extends StatelessWidget {
                         ),
                       );
                     },
+
                     style: ElevatedButton.styleFrom(
-                      backgroundColor: const Color.fromRGBO(255, 70, 60, 1),
+                      backgroundColor: const Color.fromRGBO(
+                        255,
+                        70,
+                        60,
+                        1,
+                      ),
                       foregroundColor: Colors.white,
                       shape: RoundedRectangleBorder(
                         borderRadius: BorderRadius.circular(12),
                       ),
                     ),
+
                     child: const Text(
-                      'Checkout',
+                      "Checkout",
                       style: TextStyle(
                         fontSize: 13,
                         fontWeight: FontWeight.w600,
@@ -442,17 +586,13 @@ class CartUI extends StatelessWidget {
                   ),
                 ),
 
-
-
-
-
-
-
+                const SizedBox(height: 20),
               ],
             ),
           ),
         ),
       ),
+
       bottomNavigationBar: SafeArea(
         top: false,
         child: BottomNavigationBar(
@@ -461,29 +601,20 @@ class CartUI extends StatelessWidget {
           selectedItemColor: Colors.black,
           unselectedItemColor: Colors.grey,
 
-          // onTap: (index) {
-          //   if (index == 1) {
-          //     Navigator.push(
-          //       context,
-          //       MaterialPageRoute(
-          //         builder: (context) => const CartUI(),
-          //       ),
-          //     );
-          //   }
-          // },
-
           items: const [
             BottomNavigationBarItem(
               icon: Icon(Icons.home_outlined),
-              label: 'Home',
+              label: "Home",
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.person),
-              label: 'Person',
+              label: "Person",
             ),
+
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
-              label: 'Setting',
+              label: "Setting",
             ),
           ],
         ),

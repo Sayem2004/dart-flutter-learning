@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'product_details.dart';
 import 'cart_ui.dart';
+import "profile_ui.dart";
 
 class ProductUI extends StatelessWidget {
   const ProductUI({super.key});
@@ -623,6 +624,15 @@ class ProductUI extends StatelessWidget {
                 ),
               );
             }
+
+            if (index == 3) {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ProfileUI(),
+                ),
+              );
+            }
           },
 
           items: const [
@@ -637,6 +647,10 @@ class ProductUI extends StatelessWidget {
             BottomNavigationBarItem(
               icon: Icon(Icons.settings),
               label: 'Setting',
+            ),
+            BottomNavigationBarItem(
+              icon: Icon(Icons.person),
+              label: 'Profile',
             ),
           ],
         ),
