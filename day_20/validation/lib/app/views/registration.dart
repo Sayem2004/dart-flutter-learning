@@ -113,6 +113,27 @@ class RegistrationView extends StatelessWidget {
                 ),
 
                 const SizedBox(height: 10),
+                TextFormField(
+                  keyboardType: TextInputType.phone,
+                  textInputAction: TextInputAction.next,
+                  maxLength: 11,
+                  decoration: InputDecoration(
+                    labelText: "Optional Phon",
+                    hintText: "01XXXXXXXXX",
+                    prefixIcon: const Icon(Icons.phone_outlined),
+                    border: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(12),
+                    ),
+                  ),
+                  validator: (value) {
+                    if (value == null || value.trim().isEmpty) {
+                      return "Phone is required";
+                    }
+                    return null;
+                  },
+                ),
+
+                const SizedBox(height: 10),
 
                 // Password
                 TextFormField(
