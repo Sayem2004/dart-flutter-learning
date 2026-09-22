@@ -1,28 +1,27 @@
 import 'package:flutter/material.dart';
-import 'login_screen.dart';
+import 'home_screen.dart';
 
-class SettingsScreen extends StatelessWidget {
-  const SettingsScreen({super.key});
+class LoginScreen extends StatelessWidget {
+  const LoginScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.blue,
-        title: const Text("Settings"),
+        title: const Text("Login"),
       ),
       body: Center(
         child: ElevatedButton(
           onPressed: () {
-            Navigator.pushAndRemoveUntil(
+            Navigator.pushReplacement(
               context,
               MaterialPageRoute(
-                builder: (context) => const LoginScreen(),
+                builder: (context) => const HomeScreen(),
               ),
-                  (route) => false,
             );
           },
-          child: const Text("Logout"),
+          child: const Text("Login"),
         ),
       ),
     );
